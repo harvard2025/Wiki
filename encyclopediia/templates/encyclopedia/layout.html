@@ -11,19 +11,23 @@
 <body>
     <div class="row">
         <div class="slidebar col-lg-2 col-md-3">
-            <h2>Wikipedia</h2>
+            <h2>WikiPedia</h2>
             <form>
                 <input type="text" class="search" name="q" placeholder="Search">
             </form>
             <div>
+                <hr>
                 <a href="{% url 'index' %}">Home</a>
             </div>
-            <div>
+            <div class="a">
                 Creat New Page
             </div>
-            <div>
+            <div class="a">
                 Random Page
             </div>
+            <hr>
+    
+            <a href="https://prrohost.pythonanywhere.com">About me</a>
             {% block nav %}
             {% endblock nav %}
         </div>
@@ -32,6 +36,8 @@
             {% endblock body %}
         </div>
     </div>
+
+
 
 
 
