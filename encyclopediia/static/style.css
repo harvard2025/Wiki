@@ -1,0 +1,77 @@
+.slidebar {
+    background-color: rgb(224, 224, 224); /* لون الخلفية */
+    height: 100vh; /* ارتفاع الشاشة بالكامل */
+    padding-top: 10px; 
+    padding-left: 20px; 
+    padding-right: 20px;
+    display: flex; /* استخدام flexbox لترتيب العناصر */
+    flex-direction: column; /* ترتيب العناصر عموديًا */
+    justify-content: flex-start; /* بداية من الأعلى */
+}
+
+.slidebar h2 {
+    margin-bottom: 20px; 
+    color: #00346c;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.slidebar h2:hover{
+    color: rgb(123, 88, 0);
+}
+
+.slidebar a , .a{
+    text-decoration: none;
+    color: #000; /* لون النص */
+    padding: 8px;
+    display: block; /* جعل الرابط يمتد على كامل العرض */
+    border-radius: 4px;
+    margin-bottom: 10px;
+   
+    transition: background-color 0.3s ease; /* إضافة تأثير عند التفاعل */
+}
+
+
+
+
+.slidebar a:hover , .a:hover{
+    background-color: #007bff; /* تغيير اللون عند التمرير */
+    color: white; /* تغيير اللون عند التمرير */
+}
+
+.slidebar .search  {
+    width: 100%; /* يجعل حقل البحث يمتد على كامل العرض */
+    margin-bottom: 10px; 
+    margin-right: 20px;
+    border-radius: 10px;
+    border: 1px solid #000000; /* حدود حقل البحث */
+}
+
+
+
+.li {
+    text-decoration: none;
+    padding: 20px;
+    background-color: rgb(224, 224, 224);
+    max-width: 400px;
+    margin: 10px;
+    list-style: none;
+    text-align: center;
+    transition: 0.3s;
+}
+.li:hover{
+    scale: 1.1;
+    color: rgb(181, 154, 0);
+    background-color: rgb(245, 255, 253);
+
+}
+
+
+
+
+
+
+
+
+
+
