@@ -1,0 +1,32 @@
+{% extends 'encyclopedia/layout.html' %}
+{% block style %}
+
+<style>
+    h1{
+        text-align: center;
+        font-weight: 900;
+        margin-bottom: 30px;
+    }
+</style>
+{% endblock style %}
+{% block title %}search{% endblock title %}
+{% block body %}
+
+<h1>This is the Search for '{{se}}'</h1>
+
+<ul>
+    {% for entry in recomm %}
+    
+    <a href="{% url 'entry' entry %}" class="li">
+        <li >{{ entry }}</li>
+    </a>
+    {% endfor %}
+   
+</ul>
+
+
+
+
+
+{% endblock body %}
+

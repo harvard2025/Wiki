@@ -9,24 +9,35 @@
     {% block style %}{% endblock style %}
 
 
+
     
 </head>
 <body dir="ltr"> 
     <div class="row">
-        <div class="slidebar col-lg-2 col-md-3">
+        <div class="slidebar col-lg-2 col-md-3 slid">
             <h2>WikiPedia</h2>
-            <form>
-                <input type="text" class="search" name="q" placeholder="Search">
+
+            <form action="{% url 'search' %}" method="POST">
+                {% csrf_token %}
+                <input type="text" class="search" name="q" placeholder="Search Encyclopedia">
             </form>
+
             <div>
                 <hr>
-                <a href="{% url 'index' %}">Home</a>
+                <a href="{% url 'index' %}" class=".a">Home</a>
             </div>
-            <div class="a">
-                Creat New Page
+            <div>
+                <a href="{% url 'new_page' %}">
+                    Creat New Page
+                </a>
+                
             </div>
-            <div class="a">
-                Random Page
+            <div>
+                <a href="{% url 'rand' %}">
+                    Random Page
+
+                </a>
+                
             </div>
             <hr>
     
@@ -34,7 +45,7 @@
             {% block nav %}
             {% endblock nav %}
         </div>
-        <div class="col-10 col-lg-10 col-md-10">
+        <div class="main col-lg-10 col-md-9">
             {% block body %}
             {% endblock body %}
         </div>

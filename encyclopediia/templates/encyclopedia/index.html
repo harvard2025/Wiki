@@ -3,45 +3,7 @@
 
 {% block style %}
 
-<style>
-.title{
-    text-align: center;
-    color: #00346c;}
 
-
-
-.li {
-    text-decoration: none;
-    padding: 20px;
-    background-color: rgb(224, 224, 224);
-    margin: 10px;
-    list-style: none;
-    text-align: center;
-    transition: 0.3s;
-    width: 100%;
-    font-weight: 700;
-}
-.li:hover{
-    scale: 1.1;
-    color: rgb(181, 154, 0);
-    background-color: rgb(245, 255, 253);
-
-}
-
-
-
-ul{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-
-
-</style>
 
 {% endblock style %}
 
@@ -53,7 +15,9 @@ ul{
 
     <ul>
         {% for entry in entries %}
-            <li class="li">{{ entry }}</li>
+        <a href="{% url 'entry' entry %}" class="li">
+            <li >{{ entry }}</li>
+        </a>
         {% endfor %}
        
     </ul>
