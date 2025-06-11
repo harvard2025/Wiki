@@ -1,12 +1,12 @@
 import random
 from django.shortcuts import render
-from . import utill
+from . import util
 from markdown2 import Markdown
 # Create your views here.
 
 
 def convert_md_to_html(title):
-    content = utill.get_entry(title)
+    content = util.get_entry(title)
     markdown = Markdown()
     if content == None:
         return None
@@ -22,7 +22,7 @@ def convert_md_to_html(title):
 def index(request):
 
     return render(request, 'encyclopedia/index.html',{
-        'entries': utill.list_entries()
+        'entries': util.list_entries()
         
     })
 
@@ -30,8 +30,8 @@ def index(request):
 def entry(request, title):
     html_content = convert_md_to_html(title)
     if html_content == None:
-        return render(request, 'encyclopedia/eror.html', {
-            'massage': 'Page not Fount Error, This entry does not exist!!'
+        return render(request, 'encyclopedia/error.html', {
+            'message': 'Page not Fount Error, This entry does not exist!!'
         })
     else:
         return render(request, 'encyclopedia/entry.html',{
@@ -50,7 +50,7 @@ def search(request):
                 'content': html_content
             })
         else:
-            all_entries = utill.list_entries()
+            all_entries = util.list_entries()
             recomm = []
             for entry in all_entries:
                 if entry_search.lower() in entry.lower():
@@ -67,13 +67,13 @@ def new_page(request):
     else:
         title = request.POST['title']
         content = request.POST['content']
-        titlee = utill.get_entry(title)
+        titlee = util.get_entry(title)
         if titlee is not None:
-            return render(request, 'encyclopedia/eror.html', {
-                'massage' : 'Entry Page Already exits'
+            return render(request, 'encyclopedia/error.html', {
+                'message' : 'Entry Page Already exits'
             })
         else:
-            utill.save_entry(title, content)
+            util.save_entry(title, content)
             html_content = convert_md_to_html(title)
             return render(request, 'encyclopedia/entry.html', {
                 'title': title,
@@ -84,10 +84,10 @@ def new_page(request):
 def edit(request):
     if request.method == "POST":
         title = request.POST['title']
-        contect = utill.get_entry(title)
+        content = util.get_entry(title)
         return render(request, 'encyclopedia/edit.html', {
             'title':title,
-            'contect':contect
+            'content':content
         })
     
 
@@ -95,7 +95,7 @@ def save_edit(request):
     if request.method == 'POST':
         title = request.POST['title']
         content = request.POST['content']
-        utill.save_entry(title, content)
+        util.save_entry(title, content)
         html_content = convert_md_to_html(title)
         return render(request, 'encyclopedia/entry.html', {
             'title': title,
@@ -105,7 +105,7 @@ def save_edit(request):
 
 
 def rand(request):
-    all = utill.list_entries()
+    all = util.list_entries()
     rand_entry = random.choice(all)
     html_content = convert_md_to_html(rand_entry)
     return render(request, 'encyclopedia/entry.html', {
