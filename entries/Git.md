@@ -1,3 +1,7 @@
 # Git
 
-Git is a distributed version control system that enables developers to track changes in code, collaborate with teams, and manage project history efficiently. It is commonly used with platforms like GitHub for open-source and private projects.
+Git is a version control tool that can be used to keep track of versions of a software project.
+
+## GitHub
+
+GitHub is an online service for hosting git repositories.

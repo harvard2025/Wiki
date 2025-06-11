@@ -1,3 +1,3 @@
-# Python
-
-Python is a high-level programming language known for its readability and versatility. It is widely used in web development, data analysis, artificial intelligence, and automation due to its extensive libraries and community support.
+# Python
+
+Python is a programming language that can be used both for writing **command-line scripts** or building **web applications**.

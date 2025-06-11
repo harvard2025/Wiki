@@ -1,5 +1,11 @@
-# HTML
-
-
-
-HTML (HyperText Markup Language) is the standard language for creating web pages. It structures content using elements like headings, paragraphs, links, and images to define the layout and functionality of a webpage. 
+# HTML
+
+HTML is a markup language that can be used to define the structure of a web page. HTML elements include
+
+* headings
+* paragraphs
+* lists
+* links
+* and more!
+
+The most recent major version of HTML is HTML5.
